@@ -456,6 +456,80 @@ details.abstract p{
 
 .mini-list{list-style:none; padding:0; margin:0;}
 
+/*release of RL*/
+.release-section,
+.capability-section{
+  margin-top:20px;
+}
+
+.release-heading{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+
+.release-grid{
+  border-top:1px solid var(--line);
+}
+
+.release-item{
+  display:grid;
+  grid-template-columns:190px 1fr 150px;
+  gap:12px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.release-item .link-chip{
+  justify-self:center;
+}
+
+.release-title{
+  font-weight:600;
+  font-size:13.2px;
+  color:var(--ink);
+}
+
+.release-desc{
+  font-size:12.8px;
+  color:var(--ink-soft);
+  line-height:1.5;
+}
+
+.capability-row{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  gap:12px;
+  padding:9px 0;
+  border-top:1px solid var(--line);
+  font-size:12.8px;
+}
+
+.capability-row span:first-child{
+  font-weight:600;
+  color:var(--ink);
+}
+
+.capability-row span:last-child{
+  color:var(--ink-soft);
+}
+
+@media (max-width:700px){
+  .release-item{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+
+  .capability-row{
+    grid-template-columns:1fr;
+    gap:3px;
+  }
+}
+
 /* ===== Pill-style link chips (single-action external links) ===== */
 .entry-links{
   display:flex;
@@ -618,16 +692,335 @@ details.abstract p{
       </div>
 
       <div class="pub-entry">
+        <div class="badge-row">
+          <span class="tag tag-soon">Coming soon</span>
+          <span class="tag tag-grade">Open Source</span>
+        </div>
+
+        <h3 class="pub-entry-title">
+          BharatGen Reinforcement Learning — Training a 17B Reasoning Model
+        </h3>
+
+        <p class="pub-entry-meta">
+          Reinforcement learning &amp; post-training for reasoning, agentic intelligence, code,
+          mathematics and multilingual capabilities
+        </p>
+
+        <p class="pub-summary">
+          Technical report covering the reinforcement learning and post-training of BharatGen's
+          17B-parameter Mixture-of-Experts foundation model. Documents the training recipes,
+          reasoning and verification pipeline, evaluation methodology and large-scale training
+          infrastructure, with experiments spanning mathematical reasoning, coding,
+          multilingual reasoning and agentic capabilities. The release includes the model,
+          intermediate checkpoints, training code and associated datasets.
+        </p>
+
+        <div class="entry-links">
+          <a class="link-chip"
+            href="TECHNICAL_REPORT_URL"
+            target="_blank">
+            Technical Report
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="link-chip"
+            href="https://huggingface.co/bharatgenai/Param2-17B-A2.4B-Thinking"
+            target="_blank">
+            Hugging Face
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="link-chip"
+            href="RL_GITHUB_REPO_URL"
+            target="_blank">
+            GitHub
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="link-chip"
+            href="RL_DATA_RELEASE_URL"
+            target="_blank">
+            Data Release
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="release-section">
+          <div class="release-heading">Release &amp; Coverage</div>
+
+          <div class="release-grid">
+
+            <div class="release-item">
+              <span class="release-title">Param2-17B-A2.4B-Thinking</span>
+              <span class="release-desc">
+                17B-parameter MoE reasoning model with 2.4B active parameters.
+              </span>
+              <a class="link-chip sm"
+                href="https://huggingface.co/bharatgenai/Param2-17B-A2.4B-Thinking"
+                target="_blank">
+                Hugging Face
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                        stroke="currentColor" stroke-width="1.3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="release-item">
+              <span class="release-title">Intermediate Checkpoints</span>
+              <span class="release-desc">
+                Open checkpoints tracing the progression through supervised post-training and RL.
+              </span>
+              <a class="link-chip sm"
+                href="INTERMEDIATE_CHECKPOINTS_URL"
+                target="_blank">
+                Checkpoints
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                        stroke="currentColor" stroke-width="1.3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="release-item">
+              <span class="release-title">RL Training Code</span>
+              <span class="release-desc">
+                Training recipes, RL infrastructure and evaluation tooling.
+              </span>
+              <a class="link-chip sm"
+                href="RL_GITHUB_REPO_URL"
+                target="_blank">
+                GitHub
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                        stroke="currentColor"
+                        stroke-width="1.3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="release-item">
+              <span class="release-title">RL &amp; Reasoning Data</span>
+              <span class="release-desc">
+                Datasets for reasoning, mathematics, code, verification and multilingual tasks.
+              </span>
+              <a class="link-chip sm"
+                href="RL_DATA_RELEASE_URL"
+                target="_blank">
+                Data Release
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                        stroke="currentColor"
+                        stroke-width="1.3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="capability-section">
+          <div class="release-heading">Capabilities</div>
+
+          <div class="capability-row">
+            <span>Reasoning</span>
+            <span>Mathematics · Logic · Verifiable reasoning</span>
+          </div>
+
+          <div class="capability-row">
+            <span>Agentic Intelligence</span>
+            <span>Tool use · Multi-step tasks · Agentic workflows</span>
+          </div>
+
+          <div class="capability-row">
+            <span>Code</span>
+            <span>Code generation · Code reasoning · Software engineering</span>
+          </div>
+
+          <div class="capability-row">
+            <span>Multilingual</span>
+            <span>Reasoning and instruction across Indian languages</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="pub-entry">
         <div class="badge-row"><span class="tag tag-soon">Coming soon</span></div>
         <h3 class="pub-entry-title">BharatGen Pretraining Data Preparation — 55T+ Tokens</h3>
         <p class="pub-entry-meta">Technical report</p>
         <p class="pub-summary">Covers pretraining data preparation at scale across code, math, engineering and multilingual agentic web text, along with a dedicated long-context data series. One technical report with several accompanying blogs, all linked from a single project page.</p>
       </div>
 
+      
+      
       <div class="pub-entry">
-        <div class="badge-row"><span class="tag tag-soon">Coming soon</span></div>
+        <div class="badge-row">
+          <span class="tag tag-venue">AI Alliance</span>
+          <span class="tag tag-grade">Open Source</span>
+        </div>
+
         <h3 class="pub-entry-title">Project Tapestry</h3>
-        <p class="pub-summary">Details coming soon.</p>
+
+        <p class="pub-entry-meta">
+          Consortium-scale &amp; federated training for frontier foundation models and sovereign AI
+        </p>
+
+        <p class="pub-summary">
+          An open-source AI Alliance initiative, led by Prof. Yann LeCun, exploring how geographically distributed organizations
+          can collaboratively train foundation models while keeping data within sovereign environments.
+          Project Tapestry develops the training infrastructure, coordination mechanisms, cultural
+          alignment methods and governance practices needed for consortium-scale AI development.
+        </p>
+
+        <div class="entry-links">
+          <a class="link-chip"
+            href="https://thealliance.ai/projects/tapestry"
+            target="_blank">
+            Project Tapestry
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="link-chip"
+            href="https://github.com/PiyushSawarkar/tapestry-india-node"
+            target="_blank">
+            GitHub India Node
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="link-chip"
+            href="https://github.com/The-AI-Alliance/tapestry"
+            target="_blank">
+            GitHub
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                    stroke="currentColor" stroke-width="1.3"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <ul class="mini-list" style="margin-top:16px;">
+
+          <li>
+            <div class="badge-row" style="margin-bottom:5px;">
+              <span class="tag tag-venue">Milestone Zero · Completed</span>
+            </div>
+
+            <span class="mini-title">
+              Consortium Training &amp; Federated LLM Training
+            </span>
+
+            <div class="mini-meta">
+              Training Lead, BharatGen · September 2026
+            </div>
+
+            <p style="margin-top:8px;">
+              Led the training work from the BharatGen side for the BharatGen–Monash University
+              consortium-training proof of concept, spanning sovereign compute environments in
+              India and Australia. The M0 experiment explored coordinated distributed training
+              without exchanging underlying training data, using locally trained model updates
+              and periodic synchronization.
+            </p>
+
+            <div class="entry-links" style="margin-top:10px;">
+              <a class="link-chip sm"
+                href="https://thealliance.ai/blog/milestone-zero-the-findings-a-single-organization-could-not-have-produced"
+                target="_blank">
+                M0 Findings
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                        stroke="currentColor" stroke-width="1.3"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+
+              <a class="link-chip sm"
+                href="https://github.com/PiyushSawarkar/tapestry-india-node"
+                target="_blank">
+                M0 Code
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3H3.5A1.5 1.5 0 002 4.5v8A1.5 1.5 0 003.5 14h8a1.5 1.5 0 001.5-1.5V10M9 2h5v5M13.5 2.5L7 9"
+                        stroke="currentColor" stroke-width="1.3"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <div class="badge-row" style="margin-bottom:5px;">
+              <span class="tag tag-soon">Milestone One · In progress</span>
+            </div>
+
+            <span class="mini-title">
+              Consortium Training, Cultural Alignment &amp; Data Governance
+            </span>
+
+            <div class="mini-meta">
+              September – November 2026
+            </div>
+          </li>
+
+          <li>
+            <div class="badge-row" style="margin-bottom:5px;">
+              <span class="tag tag-soon">Milestone Two · Coming soon</span>
+            </div>
+
+            <span class="mini-title">Details to be added</span>
+
+            <div class="mini-meta">
+              Project roadmap · Tapestry
+            </div>
+          </li>
+
+          <li>
+            <div class="badge-row" style="margin-bottom:5px;">
+              <span class="tag tag-soon">Future milestones</span>
+            </div>
+
+            <span class="mini-title">M3, M4 &amp; beyond</span>
+
+            <div class="mini-meta">
+              Updates will be added as milestones are completed.
+            </div>
+          </li>
+
+        </ul>
       </div>
 
       <div class="pub-entry">
