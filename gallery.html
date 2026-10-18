@@ -381,7 +381,7 @@ footer{
   color:var(--bg);
 }
 
-.gallery-index{
+/* .gallery-index{
   border:1px solid var(--line);
   border-radius:10px;
   padding:6px 20px;
@@ -403,6 +403,45 @@ footer{
   color:var(--gold);
   margin-right:10px;
 }
+.gallery-index-item .idx-date{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--ink-soft);
+  white-space:nowrap;
+} */
+
+.gallery-index{
+  counter-reset: gallery-item;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:6px 20px;
+  margin:0 0 48px;
+  background:var(--panel);
+}
+
+.gallery-index-item{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+  color:var(--ink);
+  counter-increment:gallery-item;
+}
+
+.gallery-index-item:last-child{
+  border-bottom:none;
+}
+
+.gallery-index-item > span:first-child::before{
+  content:counter(gallery-item, decimal-leading-zero);
+  display:inline-block;
+  font-family:'IBM Plex Mono',monospace;
+  color:var(--gold);
+  margin-right:10px;
+}
+
 .gallery-index-item .idx-date{
   font-family:'IBM Plex Mono',monospace;
   font-size:11px;
@@ -711,8 +750,8 @@ footer{
       <button class="gallery-filter-btn" data-filter="Milestone">Milestone</button>
     </div>
 
-    <div class="gallery-index">
-      <a class="gallery-index-item" href="#oct2026-isro-talk" style="text-decoration:none;"><span><span class="idx-num">01</span>Talk at ISRO's U R Rao Satellite Centre (URSC), Bengaluru, 2026</span><span class="idx-date">Monday, 12 October 2026</span></a>
+    <!-- <div class="gallery-index">
+      <a class="gallery-index-item" href="#oct2026-isro-talk" style="text-decoration:none;"><span><span class="idx-num">01</span>Talk at ISRO's U R Rao Satellite Centre (URSC), Bengaluru, 2026</span><span class="idx-date">Sunday, 11 – Tuesday, 13 October 2026</span></a>
       <a class="gallery-index-item" href="#sep2026-activate" style="text-decoration:none;"><span><span class="idx-num">02</span>Talk at Mixture of Experts, hosted by Activate &amp; BharatGen</span><span class="idx-date">Friday, 11 September 2026</span></a>
       <a class="gallery-index-item" href="#sep2026-ciaim-mumbai" style="text-decoration:none;"><span><span class="idx-num">03</span>Talk at the Columbia–IIT Bombay AI for Manufacturing (CI-AIM) Industry Conclave 2026</span><span class="idx-date">Friday, 4 September 2026</span></a>
       <a class="gallery-index-item" href="#sep2026-unsw" style="text-decoration:none;"><span><span class="idx-num">04</span>Meeting with Prof. Shailendra Sawleshwarkar, UNSW</span><span class="idx-date">Tuesday, 1 September 2026</span></a>
@@ -725,14 +764,83 @@ footer{
       <a class="gallery-index-item" href="#june2025-bharatgen-summit" style="text-decoration:none;"><span><span class="idx-num">11</span>BharatGen Summit 2025, Delhi</span><span class="idx-date">Saturday, 31 May – Tuesday, 3 June 2025</span></a>
       <a class="gallery-index-item" href="#nov2024-tips5-iisc" style="text-decoration:none;"><span><span class="idx-num">12</span>Foundation Models &amp; Sovereign AI — TIPS 5.0, IISc Bengaluru</span><span class="idx-date">Sunday, 10 – Wednesday, 13 November 2024</span></a>
       <a class="gallery-index-item" href="#2024-convocation" style="text-decoration:none;"><span><span class="idx-num">13</span>Convocation at IIT Bombay</span><span class="idx-date">June 2024</span></a>
+    </div> -->
+
+    <div class="gallery-index">
+      <a class="gallery-index-item" href="#oct2026-isro-talk" style="text-decoration:none;">
+        <span>Talk at ISRO's U R Rao Satellite Centre (URSC), Bengaluru, 2026</span>
+        <span class="idx-date">Sunday, 11 – Tuesday, 13 October 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#sep2026-activate" style="text-decoration:none;">
+        <span>Talk at Mixture of Experts, hosted by Activate &amp; BharatGen</span>
+        <span class="idx-date">Friday, 11 September 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#sep2026-ciaim-mumbai" style="text-decoration:none;">
+        <span>Talk at the Columbia–IIT Bombay AI for Manufacturing (CI-AIM) Industry Conclave 2026</span>
+        <span class="idx-date">Friday, 4 September 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#sep2026-unsw" style="text-decoration:none;">
+        <span>Meeting with Prof. Shailendra Sawleshwarkar, UNSW</span>
+        <span class="idx-date">Tuesday, 1 September 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#aug2026-aikosh" style="text-decoration:none;">
+        <span>Panel Discussion at IndiaAI Mission’s AIKosh Workshop 2026</span>
+        <span class="idx-date">Thursday, 20 August 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#aug2026-inria" style="text-decoration:none;">
+        <span>Visit of Inria Officials</span>
+        <span class="idx-date">Thursday, 27 August 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#aug2026-visiting-lec" style="text-decoration:none;">
+        <span>Visiting Lecture on Reinforcement Learning, IIT Bombay</span>
+        <span class="idx-date">Friday, 14 &amp; Sunday, 16 August 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#june2026-apt" style="text-decoration:none;">
+        <span>Talk at Advances in Proteomics Technologies Conference 2026</span>
+        <span class="idx-date">Friday, 29 June 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#april2026-aws-summit" style="text-decoration:none;">
+        <span>Invited for AWS Summit 2026, Bengaluru</span>
+        <span class="idx-date">Thursday, 23 April 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#feb2026-india-ai-impact-summit" style="text-decoration:none;">
+        <span>India AI Impact Summit 2026, Delhi</span>
+        <span class="idx-date">Monday, 16 – Friday, 20 February 2026</span>
+      </a>
+
+      <a class="gallery-index-item" href="#june2025-bharatgen-summit" style="text-decoration:none;">
+        <span>BharatGen Summit 2025, Delhi</span>
+        <span class="idx-date">Saturday, 31 May – Tuesday, 3 June 2025</span>
+      </a>
+
+      <a class="gallery-index-item" href="#nov2024-tips5-iisc" style="text-decoration:none;">
+        <span>Foundation Models &amp; Sovereign AI — TIPS 5.0, IISc Bengaluru</span>
+        <span class="idx-date">Sunday, 10 – Wednesday, 13 November 2024</span>
+      </a>
+
+      <a class="gallery-index-item" href="#2024-convocation" style="text-decoration:none;">
+        <span>Convocation at IIT Bombay</span>
+        <span class="idx-date">June 2024</span>
+      </a>
+      
     </div>
+
 
         <div class="gallery-event" id="oct2026-isro-talk" data-type="Talk">
           <header class="gallery-event-head">
             <span class="gallery-type">Talk</span>
             <h2 class="gallery-event-title">Invited Talk at ISRO's U R Rao Satellite Centre (URSC)</h2>
             <div class="gallery-event-meta">
-              <span>Monday, 12 October 2026</span>
+              <span>Sunday, 11 – Tuesday, 13 October 2026</span>
               <span>U R Rao Satellite Centre (URSC), ISRO, Bengaluru, India</span>
             </div>
             <p class="gallery-event-blurb">Delivered an invited talk titled “From Tokens to Reasoning to Agentic Intelligence: The Evolution of the Foundation AI Stack and Its Diffusion into Space” as part of the Structured Training Programme on AI Adoption in Space Systems at ISRO's U R Rao Satellite Centre. Drawing on my experience building indigenous foundation models at BharatGen, I traced the evolution from pretraining and post-training to reasoning, reinforcement learning, and agentic intelligence. An especially exciting frontier is the potential to extend these capabilities into scientific discovery, where simulations, digital twins, and physics-based models can provide verifiable feedback for AI systems to learn from their actions and progressively investigate the unknown.</p>
@@ -846,7 +954,7 @@ footer{
                 data-caption="A commemorative model of Chandrayaan-3 at Shiv Shakti Point, depicting the Vikram lander and Pragyan rover on the lunar surface."
                 data-type="Talk"
                 data-title="Invited Talk at ISRO's U R Rao Satellite Centre (URSC)"
-                data-date="Monday, 12 October 2026"
+                data-date="Tuesday, 13 October 2026"
                 data-venue="U R Rao Satellite Centre (URSC), ISRO, Bengaluru, India"
                 data-people="ISRO · Chandrayaan-3 · Vikram · Pragyan"
               >
@@ -868,7 +976,7 @@ footer{
                 data-caption="A closer look at the commemorative Chandrayaan-3 model featuring the Vikram lander and Pragyan rover on the lunar surface."
                 data-type="Talk"
                 data-title="Invited Talk at ISRO's U R Rao Satellite Centre (URSC)"
-                data-date="Monday, 12 October 2026"
+                data-date="Tuesday, 13 October 2026"
                 data-venue="U R Rao Satellite Centre (URSC), ISRO, Bengaluru, India"
                 data-people="ISRO · Chandrayaan-3 · Vikram · Pragyan"
               >
